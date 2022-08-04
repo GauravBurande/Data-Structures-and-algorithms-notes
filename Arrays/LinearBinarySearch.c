@@ -17,7 +17,9 @@ int main()
     // sorted array for binary search
     int arr[] = {1,3,5,56,64,73,123,225,444};
     int size = sizeof(arr)/sizeof(int);
-    int element = 64;
+    int element;
+    printf("Enter the element: ");
+    scanf("%i", &element);
     int searchIndex = binarySearch(arr, size, element);
     printf("The element %i was found at index %i \n", element, searchIndex);
     return 0;
