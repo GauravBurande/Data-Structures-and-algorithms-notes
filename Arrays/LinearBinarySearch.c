@@ -21,7 +21,14 @@ int main()
     printf("Enter the element: ");
     scanf("%i", &element);
     int searchIndex = binarySearch(arr, size, element);
-    printf("The element %i was found at index %i \n", element, searchIndex);
+    if(searchIndex>=0)
+    {
+        printf("The element %i was found at index %i \n", element, searchIndex);
+    }
+    else
+    {
+        printf("not found!");
+    }
     return 0;
 }
 
