@@ -96,12 +96,13 @@ int main()
     printf("************************************************\n");
     linkedListTraversal(head);
 
-    printf("\n Linked list after insertion\n");
-    printf("************************************************\n");
     // head = insertAtFirst(head, 98);
     // head = insertAtIndex(head, 98, 2);
     // head = insertAtEnd(head, 98);
     head = insertAfterNode(head, third, 32);
+
+    printf("\n Linked list after insertion\n");
+    printf("************************************************\n");
     linkedListTraversal(head);
 
     return 0;
