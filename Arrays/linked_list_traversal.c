@@ -35,7 +35,7 @@ int main()
     third->data = 66;
     third->next = fourth;
 
-    // Terminate the list at the third node
+    // Terminate the list at the fourth node
     fourth->data = 77;
     fourth->next = NULL;
 
