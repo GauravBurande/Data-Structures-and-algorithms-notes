@@ -1,0 +1,105 @@
+Stack
+    it's a collection og elements with certain operations following LIFO discipline
+    A stack can be implemented using an array or a linked list
+
+        - Stack is ADT (an abstract data type)
+        - The pointer points at the top element of the stack
+        - it's used in function calls
+    
+stack overflow
+    when the stack memory is full and can't take any more data.
+
+
+push()
+    inserting element in the stack
+
+pop()
+    getting the topmost element out of the stack
+
+peak(index)
+    to get the value at a given index in the Stack
+
+isEmpty/isFull()    
+    determine whether the stack is empty or full
+
+FILO
+    First In Last Out
+    the last element comes out first and the first element gets out at last
+
+
+
+Implementing Stack using an array
+    - First we need a fixed size array
+    - make a top element pointer or a index value that points to the top element of the stack
+
+
+pseudo code to implement stack using an array
+
+    struct stack
+    {
+        int size;  // - max value of the elements of array
+        int top;   // - a variable to store index value of the top element
+        int *arr;
+    }
+    struct stack s;
+    s.size = 100;
+    s.top = -1;
+    s.arr = (int*)malloc(s.size*sizeof(int));
+
+
+    Stack operations using array
+    1.push
+
+        we need to provide a value as an argument to the push function
+        and no value is returned by the push function
+
+        // Creating the stack
+        struct stack *sp;
+        {
+            sp->size = 8;
+            sp->top = -1;
+            sp->arr = (int *)malloc(sp.size*sizeof(int));
+        }    
+
+        void push(value)
+        {
+            if(isFull(sp))
+            {
+                printf("stack overflow");
+            }
+            else 
+            {
+                sp->top++;
+                sp->arr[sp->top] = value;
+            }
+        }
+    
+    2.pop
+        pop()
+        
+        delete the value at top of the stack
+        and returns the deleted value
+
+        {
+            if(isEmpty(sp))
+            {
+                printf("Nothing to pop here \nstack underflow");
+
+                return -1;
+            }
+            else
+            {
+                int val = sp->arr[sp->top];
+                sp->top--;
+
+                return val;
+            }
+        }
+
+
+
+
+
+
+
+
