@@ -14,10 +14,7 @@ int isEmpty(struct stack *ptr)
     {
         return 1;
     }
-    else
-    {
-        return 0;
-    }
+    return 0;
 }
 
 int isFull(struct stack *ptr)
@@ -26,10 +23,7 @@ int isFull(struct stack *ptr)
     {
         return 1;
     }
-    else
-    {
-        return 0;
-    }
+    return 0;
 }
 
 int main()
@@ -39,10 +33,11 @@ int main()
     // s.top = -1;
     // s.arr = (int *)malloc(s.size * sizeof(int));
 
-    struct stack *s;
-    s->size = 80;
+    struct stack *s = (struct stack *)malloc(sizeof(struct stack));
+    s->size = 10;
     s->top = -1;
     s->arr = (int *)malloc(s->size * sizeof(int));
+    printf("stack has been created successfully!\n");
 
     // pushing an element manually
     s->arr[0] = 3;
