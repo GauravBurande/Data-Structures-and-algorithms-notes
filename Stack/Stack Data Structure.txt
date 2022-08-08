@@ -97,6 +97,21 @@ pseudo code to implement stack using an array
         }
 
 
+Peek operation in stack using array
+    to get the index when a position(i) argument is given
+        (array index = top - i + 1)
+
+    int peek(struct stack *sp, int i)
+    {
+        if(sp->top-i+1<0)
+        {
+            printf("not a valid position");
+            return -1;
+        }
+        return sp->arr[sp->top-i+1];
+    }
+
+
 
 
 
