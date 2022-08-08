@@ -111,6 +111,12 @@ Peek operation in stack using array
         return sp->arr[sp->top-i+1];
     }
 
+stacktop
+    return sp->arr[st-top];
+
+stackbottom
+    return sp->arr[0];
+
 
 
 

@@ -64,6 +64,16 @@ int peek(struct stack *sp, int i)
     return sp->arr[index];
 }
 
+int stackTop(struct stack *sp)
+{
+    return sp->arr[sp->top];
+}
+
+int stackBottom(struct stack *sp)
+{
+    return sp->arr[0];
+}
+
 int main()
 {
     struct stack *sp = (struct stack *)malloc(sizeof(struct stack));
@@ -86,20 +96,13 @@ int main()
     push(sp, 99);
     
     // printing values inside the stack
-    for (int j = 1; j <= sp->top + 1; j++)
-    {
-    printf("The element at position %d is %d\n", j, peek(sp,j));
-    }
-
-    // printf("the elements in the stack from the bottom are\n");
-    // int count = 0;
-    // for (int i = 0; i <=sp->top; i++)
+    // for (int j = 1; j <= sp->top + 1; j++)
     // {
-        // printf("%d ",sp->arr[i]);
-        // count++;
+    // printf("The element at position %d is %d\n", j, peek(sp,j));
     // }
-    // printf("\nthe number of elements in the stack is %d\n",count);
     
+    printf("The top of the stack is %d\n", stackTop(sp));
+    printf("The bottom of the stack is %d\n", stackBottom(sp));
 
     return 0;
 }
