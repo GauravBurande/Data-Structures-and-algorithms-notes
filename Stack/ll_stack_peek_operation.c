@@ -6,10 +6,14 @@ struct node
     int data;
     struct node *next;
 };
+    
+struct node *top = NULL;
+
+
 
 int isEmpty(struct node *top)
 {
-    if(top == NULL)
+    if (top == NULL)
     {
         return 1;
     }
@@ -26,7 +30,7 @@ int isFull(struct node *top)
     return 0;
 }
 
-struct node *push(struct node *top, int x)
+struct node *push(int x)
 {
     if (isFull(top))
     {
@@ -39,34 +43,53 @@ struct node *push(struct node *top, int x)
     return top;
 }
 
-int pop(struct node **top)
+int pop()
 {
-    if(isEmpty((*top)))
+    if (isEmpty((top)))
     {
         printf("Stack Underflow! The stack is empty.\n");
     }
-    struct node *n  = (*top);
-    (*top) = (*top)->next;
+    struct node *n = (top);
+    (top) = (top)->next;
     int x = n->data;
     free(n);
-    return x;   
+    return x;
 }
 
+int peek( int position)
+{
+    struct node *ptr = top;
+    for (int i = 0; (i < position-1 && ptr !=NULL); i++)
+    {
+        ptr = ptr->next;
+    }
+    if(ptr == NULL)
+    {
+        printf("End of the linked list stack!\n");
+        return -1;
+    }
+    return ptr->data;
+
+}
 
 void linkedListTraversal(struct node *ptr);
 
 int main()
 {
-    struct node *top = NULL;
-    top = push(top, 23);
-    top = push(top, 72);
-    top = push(top, 64);
-    
+    top = push(23);
+    top = push(72);
+    top = push(64);
+    top = push(45);
+
+    linkedListTraversal(top);
+    printf("the popped element is: %d\n", pop());
     linkedListTraversal(top);
 
-    int element = pop(&top);
-    printf("popped element is %d\n", element);
-    linkedListTraversal(top);
+    for (int i = 1; i <= 3; i++)
+    {
+        printf("the value at positon %d is: %d\n", i, peek(i));
+    }
+    
 
     return 0;
 }
@@ -81,15 +104,3 @@ void linkedListTraversal(struct node *ptr)
         ptr = ptr->next;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
